@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{unicode-data}
-  s.version = "0.0.0"
+  s.version = "0.1.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Run Paint Run Run"]
@@ -27,7 +27,8 @@ Gem::Specification.new do |s|
      "data/UnicodeData.txt",
      "lib/unicode-data.rb",
      "spec/spec_helper.rb",
-     "spec/unicode-data_spec.rb"
+     "spec/unicode-data_spec.rb",
+     "unicode-data.gemspec"
   ]
   s.homepage = %q{http://github.com/runpaint/unicode-data}
   s.rdoc_options = ["--charset=UTF-8"]
