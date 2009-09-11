@@ -1,17 +1,21 @@
 require 'rubygems'
 require 'rake'
+$LOAD_PATH.unshift('lib')
 
 begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "unicode-data"
-    gem.summary = %Q{TODO: one-line summary of your gem}
-    gem.description = %Q{TODO: longer description of your gem}
+    gem.summary = %Q{Ruby interface to UnicodeData.txt}
+    gem.description = %Q{Low-level interface to UnicodeData.txt}
     gem.email = "runrun@runpaint.org"
     gem.homepage = "http://github.com/runpaint/unicode-data"
     gem.authors = ["Run Paint Run Run"]
     gem.add_development_dependency "rspec"
     gem.add_development_dependency "yard"
+    gem.files.include 'data/*index'
+
+
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end
 rescue LoadError
@@ -33,6 +37,14 @@ end
 task :spec => :check_dependencies
 
 task :default => :spec
+
+
+task :build_index do
+  require 'unicode-data'
+  UnicodeData.build_index
+end
+
+Rake::Task["gemspec"].prerequisites << "build_index" if Rake::Task.task_defined?("gemspec")
 
 begin
   require 'yard'
