@@ -1,6 +1,7 @@
 = unicode-data
 
-Description goes here.
+Very early draft of a Ruby interface to UnicodeData.txt. Primarily intended
+for use in something else I'm working on.
 
 == Note on Patches/Pull Requests
  
